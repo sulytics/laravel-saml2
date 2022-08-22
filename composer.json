@@ -1,0 +1,36 @@
+{
+    "name": "freegee/laravel-saml2",
+    "description": "SAML2 Provider for Laravel based oneLogin.",
+    "type": "library",
+    "license": "MIT",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Maja Fritschi",
+            "email": "maja@freegee.ch"
+        }
+    ],
+    "require": {
+        "php": ">=8.0",
+        "ext-openssl": "*",
+        "illuminate/console": "^8.0|^9.0",
+        "illuminate/database": "^8.0|^9.0",
+        "illuminate/support": "^8.0|^9.0",
+        "onelogin/php-saml": "^4.0"
+    },
+    "require-dev": {},
+    "autoload": {
+        "psr-4": {
+            "Freegee\\LaravelSaml2\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Freegee\\LaravelSaml2\\Saml2ServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
