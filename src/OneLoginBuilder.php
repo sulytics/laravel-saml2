@@ -96,12 +96,12 @@ class OneLoginBuilder
             $settings['sp'] = [];
         }
 
-        $settings['sp']['entityId'] = $this->serviceProvider->sp_entity_id ?: $settings['sp']['entityId'] ?? URL::route('saml2.metadata', ['idpKey' => $this->identityProvider->idp_key]);
+        $settings['sp']['entityId'] = $this->serviceProvider->sp_entity_id ?: $settings['sp']['entityId'] ?? URL::route('saml.metadata', ['idpKey' => $this->identityProvider->idp_key]);
         $settings['sp']['assertionConsumerService']  = $settings['sp']['assertionConsumerService'] ?? [];
-        $settings['sp']['assertionConsumerService']['url'] = $this->serviceProvider->sp_assertion_consumer_url ?: $settings['sp']['assertionConsumerService']['url'] ?? URL::route('saml2.acs', ['idpKey' => $this->identityProvider->idp_key]);
+        $settings['sp']['assertionConsumerService']['url'] = $this->serviceProvider->sp_assertion_consumer_url ?: $settings['sp']['assertionConsumerService']['url'] ?? URL::route('saml.acs', ['idpKey' => $this->identityProvider->idp_key]);
         $settings['sp']['assertionConsumerService']['binding'] = $this->serviceProvider->sp_assertion_consumer_binding ?: $settings['sp']['assertionConsumerService']['binding'] ?? Constants::BINDING_HTTP_POST;
         $settings['sp']['singleLogoutService'] = $settings['sp']['singleLogoutService'] ?? [];
-        $settings['sp']['singleLogoutService']['url'] = $this->serviceProvider->sp_single_logout_service_url ?: $settings['sp']['singleLogoutService']['url'] ?? URL::route('saml2.sls', ['idpKey' => $this->identityProvider->idp_key]);
+        $settings['sp']['singleLogoutService']['url'] = $this->serviceProvider->sp_single_logout_service_url ?: $settings['sp']['singleLogoutService']['url'] ?? URL::route('saml.sls', ['idpKey' => $this->identityProvider->idp_key]);
         $settings['sp']['singleLogoutService']['binding'] = $this->serviceProvider->sp_single_logout_service_binding;
         $settings['sp']['NameIDFormat'] = $this->serviceProvider->sp_single_logout_service_binding;
         $settings['sp']['x509cert'] = $this->isFileUri($this->serviceProvider->sp_x509_cert) ? $this->extractCertFromFile($this->serviceProvider->sp_x509_cert) : $this->serviceProvider->sp_x509_cert;
