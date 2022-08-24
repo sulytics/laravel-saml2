@@ -130,7 +130,7 @@ class OneLoginBuilder
             'url' => $this->identityProvider->idp_logout_url,
             'binding' => $this->identityProvider->idp_logout_binding,
         ];
-        $settings['idp']['x509certNew'] = $this->isFileUri($this->identityProvider->idp_x509_cert) ? $this->extractCertFromFile($this->identityProvider->idp_x509_cert) : $this->identityProvider->idp_x509_cert;
+        $settings['idp']['x509cert'] = $this->isFileUri($this->identityProvider->idp_x509_cert) ? $this->extractCertFromFile($this->identityProvider->idp_x509_cert) : $this->identityProvider->idp_x509_cert;
     }
 
 
