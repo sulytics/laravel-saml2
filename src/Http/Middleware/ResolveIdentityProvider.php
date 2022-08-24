@@ -77,7 +77,7 @@ class ResolveIdentityProvider
     protected function resolveIdentityProvider(Request $request): ?IdentityProvider
     {
         $idpKey = $request->route('idpKey');
-        if(!empty($idpKey)) {
+        if(empty($idpKey)) {
             if(config('saml2_setting.debug')) {
                 Log::debug('[Saml2] Identity Provider Key (idpKey) is not present in the URL so cannot be resolved', [
                     'url' => $request->fullUrl()
