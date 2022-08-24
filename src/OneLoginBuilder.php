@@ -5,6 +5,7 @@ namespace Freegee\LaravelSaml2;
 use Freegee\LaravelSaml2\Models\IdentityProvider;
 use Freegee\LaravelSaml2\Models\ServiceProvider;
 use Illuminate\Container\Container;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Str;
 use OneLogin\Saml2\Auth as OneLoginAuth;
@@ -68,7 +69,7 @@ class OneLoginBuilder
             OneLoginUtils::setProxyVars(true);
         }
 
-        $this->app->singleton('OneLogin_Saml2_Auth', function ($app) {
+        $this->app->singleton(OneLoginAuth::class, function ($app) {
 
             // Get the genera, security and contact settings of the settings file.
             $settings = $app['config']['saml2_settings'];
@@ -79,8 +80,8 @@ class OneLoginBuilder
             return new OneLoginAuth($settings);
         });
 
-        $this->app->singleton('Slides\Saml2\Auth', function ($app) {
-            return new Auth($app['OneLogin_Saml2_Auth'], $this->identityProvider);
+        $this->app->singleton(Auth::class, function ($app) {
+            return new Auth(App::make(OneLoginAuth::class), $this->identityProvider);
         });
     }
 
