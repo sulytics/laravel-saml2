@@ -136,12 +136,21 @@ class OneLoginBuilder
     }
 
 
+    /**
+     * @param  string|null  $value
+     * @return bool
+     */
     protected function isFileUri(?string $value): bool
     {
         return !empty($value) && Str::startsWith($value, self::FILE_PREFIX);
     }
 
-    protected function removeFilePrefix(string $value) {
+    /**
+     * @param  string  $value
+     * @return string
+     */
+    protected function removeFilePrefix(string $value): string
+    {
         return Str::replaceFirst(self::FILE_PREFIX, '', $value);
     }
 
@@ -153,7 +162,8 @@ class OneLoginBuilder
      */
     protected function extractCertFromFile($path)
     {
-        $opensslCertificate = openssl_x509_read(file_get_contents($path));
+        $filePath = $this->removeFilePrefix($path);
+        $opensslCertificate = openssl_x509_read(file_get_contents($filePath));
         if (empty($opensslCertificate)) {
             throw new \Exception('Could not read X509 certificate-file at path \'' . $path . '\'');
         }
@@ -168,6 +178,7 @@ class OneLoginBuilder
      * @throws \Exception
      */
     protected function extractPkeyFromFile($path) {
+        $filePath = $this->removeFilePrefix($path);
         $opensslCertificate = openssl_get_privatekey($path);
         if (empty($opensslCertificate)) {
             throw new \Exception('Could not read private key-file at path \'' . $path . '\'');
