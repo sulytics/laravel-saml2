@@ -14,6 +14,8 @@ use OneLogin\Saml2\Utils as OneLoginUtils;
 
 class OneLoginBuilder
 {
+    const FILE_PREFIX = 'file://';
+
     /**
      * @var Container
      */
@@ -136,7 +138,11 @@ class OneLoginBuilder
 
     protected function isFileUri(?string $value): bool
     {
-        return !empty($value) && Str::startsWith($value, 'file://');
+        return !empty($value) && Str::startsWith($value, self::FILE_PREFIX);
+    }
+
+    protected function removeFilePrefix(string $value) {
+        return Str::replaceFirst(self::FILE_PREFIX, '', $value);
     }
 
 
