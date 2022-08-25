@@ -136,7 +136,7 @@ class OneLoginBuilder
 
     protected function isFileUri(?string $value): bool
     {
-        return !empty($value) && Str::startsWith('file://', $value);
+        return !empty($value) && Str::startsWith($value, 'file://');
     }
 
 
