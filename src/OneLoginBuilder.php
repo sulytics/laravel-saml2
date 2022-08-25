@@ -162,8 +162,9 @@ class OneLoginBuilder
      */
     protected function extractCertFromFile($path)
     {
-        $filePath = $this->removeFilePrefix($path);
-        $opensslCertificate = openssl_x509_read(file_get_contents($filePath));
+//        $filePath = $this->removeFilePrefix($path);
+        $fileContent = file_get_contents($path);
+        $opensslCertificate = openssl_x509_read($fileContent);
         if (empty($opensslCertificate)) {
             throw new \Exception('Could not read X509 certificate-file at path \'' . $path . '\'');
         }
@@ -178,7 +179,6 @@ class OneLoginBuilder
      * @throws \Exception
      */
     protected function extractPkeyFromFile($path) {
-        $filePath = $this->removeFilePrefix($path);
         $opensslCertificate = openssl_get_privatekey($path);
         if (empty($opensslCertificate)) {
             throw new \Exception('Could not read private key-file at path \'' . $path . '\'');
