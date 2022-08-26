@@ -50,7 +50,7 @@ class ResolveIdentityProvider
             throw new NotFoundHttpException();
         }
 
-        if(config('saml2_setting.debug')) {
+        if(config('saml2_settings.debug')) {
             Log::debug('[Saml2] Identity provider resolved', [
                 'id' => $identityProvider->id,
                 'IdP key' => $identityProvider->idp_key
@@ -78,7 +78,7 @@ class ResolveIdentityProvider
     {
         $idpKey = $request->route('idpKey');
         if(empty($idpKey)) {
-            if(config('saml2_setting.debug')) {
+            if(config('saml2_settings.debug')) {
                 Log::debug('[Saml2] Identity Provider Key (idpKey) is not present in the URL so cannot be resolved', [
                     'url' => $request->fullUrl()
                 ]);
@@ -89,7 +89,7 @@ class ResolveIdentityProvider
 
         $identityProvider = $this->identityProviderRepository->findByKey($idpKey);
         if(empty($identityProvider)) {
-            if(config('saml2_setting.debug')) {
+            if(config('saml2_settings.debug')) {
                 Log::debug('[Saml2] Identity Provider doesn\'t exist', [
                     'idpKey' => $idpKey
                 ]);
@@ -99,7 +99,7 @@ class ResolveIdentityProvider
         }
 
         if($identityProvider->trashed()) {
-            if (config('saml2_setting.debug')) {
+            if (config('saml2_settings.debug')) {
                 Log::debug('[Saml2] Identity Provider #' . $identityProvider->id. ' resolved but marked as deleted', [
                     'id' => $identityProvider->id,
                     'IdP Key' => $idpKey,
