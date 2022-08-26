@@ -82,11 +82,13 @@ class Saml2Controller extends Controller
         $errors = $auth->acs();
 
         if (!empty($errors)) {
-            logger()->error('saml2.error_detail', ['error' => $auth->getLastErrorReason()]);
-            session()->flash('saml2.error_detail', [$auth->getLastErrorReason()]);
-
-            logger()->error('saml2.error', $errors);
-            session()->flash('saml2.error', $errors);
+            if(config('saml2_setting.debug')) {
+                Log::error('There was an error while authenticatin with Saml', [
+                    'error' => $auth->getLastErrorReason()]);
+                session()->flash('There was an error while authenticatin with Saml', [$auth->getLastErrorReason()]);
+                Log::error('There was an error while authenticatin with Saml', $errors);
+                session()->flash('There was an error while authenticatin with Saml', $errors);
+            }
 
             return redirect(config('saml2_settings.errorRoute'));
         }
