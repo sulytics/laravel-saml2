@@ -4,7 +4,7 @@ use Freegee\LaravelSaml2\Http\Controllers\Saml2Controller;
 use Illuminate\Support\Facades\Route;
 
 Route::name('saml.')
-    ->middleware(array_merge(['saml2.resolveIdentityProvider'], config('saml2_settings.routesMiddleware')))
+    ->middleware(array_merge(config('saml2_settings.routesMiddleware'), ['saml2.resolveIdentityProvider']))
     ->prefix(config('saml2_settings.routesPrefix'))
     ->group(function () {
         $saml2_controller = config('saml2_settings.saml2_controller', Saml2Controller::class);
