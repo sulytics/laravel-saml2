@@ -10,7 +10,7 @@ class CreateServiceProvider extends Command
 
     /**
      * The name and signature of the console command.
-     * Sample default: php artisan saml2:createServiceProvider --x509cert=file:///Users/maja/Sites/certs/sulyticstool.crt --privateKey=file:///Users/maja/Sites/certs/sulyticstool.key
+     * Sample default: php artisan saml2:createServiceProvider --x509cert=file:///Users/majafritschi/Sites/certs/sulyticstool.crt --privateKey=file:///Users/majafritschi/Sites/certs/sulyticstool.key
      *
      * @var string
      */

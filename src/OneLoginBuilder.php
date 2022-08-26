@@ -105,7 +105,7 @@ class OneLoginBuilder
         $settings['sp']['singleLogoutService'] = $settings['sp']['singleLogoutService'] ?? [];
         $settings['sp']['singleLogoutService']['url'] = $this->serviceProvider->sp_single_logout_service_url ?: $settings['sp']['singleLogoutService']['url'] ?? URL::route('saml.sls', ['idpKey' => $this->identityProvider->idp_key]);
         $settings['sp']['singleLogoutService']['binding'] = $this->serviceProvider->sp_single_logout_service_binding;
-        $settings['sp']['NameIDFormat'] = $this->serviceProvider->sp_single_logout_service_binding;
+        $settings['sp']['NameIDFormat'] = $this->serviceProvider->sp_name_id_format;
         $settings['sp']['x509cert'] = $this->isFileUri($this->serviceProvider->sp_x509_cert) ? $this->extractCertFromFile($this->serviceProvider->sp_x509_cert) : $this->serviceProvider->sp_x509_cert;
         $settings['sp']['x509certNew'] = $this->isFileUri($this->serviceProvider->sp_x509_cert_new) ? $this->extractCertFromFile($this->serviceProvider->sp_x509_cert_new) : $this->serviceProvider->sp_x509_cert_new;
         $settings['sp']['privateKey'] = $this->isFileUri($this->serviceProvider->sp_private_key) ? $this->extractPkeyFromFile($this->serviceProvider->sp_private_key) : $this->serviceProvider->sp_private_key;
