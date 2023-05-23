@@ -3,7 +3,7 @@ ___
 
 ## Installation - Composer
 ___
-`composer require freegee/laravel-saml2`
+`composer require sulytics/laravel-saml2`
 
 ### Configuration
-`php artisan vendor:publish --provider="Freegee\LaravelSaml2\Saml2ServiceProvider"`
+`php artisan vendor:publish --provider="Sulytics\Saml2\Saml2ServiceProvider"`

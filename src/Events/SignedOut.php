@@ -1,6 +1,6 @@
 <?php
 
-namespace Freegee\LaravelSaml2\Events;
+namespace Sulytics\Saml2\Events;
 
 class SignedOut
 {

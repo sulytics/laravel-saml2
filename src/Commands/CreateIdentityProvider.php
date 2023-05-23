@@ -1,11 +1,11 @@
 <?php
 
-namespace Freegee\LaravelSaml2\Commands;
+namespace Sulytics\Saml2\Commands;
 
-use Freegee\LaravelSaml2\Helpers\ConsoleHelper;
-use Freegee\LaravelSaml2\Models\IdentityProvider;
-use Freegee\LaravelSaml2\Models\ServiceProvider;
-use Freegee\LaravelSaml2\Repositories\IdentityProviderRepository;
+use Sulytics\Saml2\Helpers\ConsoleHelper;
+use Sulytics\Saml2\Models\IdentityProvider;
+use Sulytics\Saml2\Models\ServiceProvider;
+use Sulytics\Saml2\Repositories\IdentityProviderRepository;
 use Illuminate\Console\Command;
 
 class CreateIdentityProvider extends Command

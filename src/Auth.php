@@ -1,9 +1,9 @@
 <?php
 
-namespace Freegee\LaravelSaml2;
+namespace Sulytics\Saml2;
 
-use Freegee\LaravelSaml2\Events\SignedOut;
-use Freegee\LaravelSaml2\Models\IdentityProvider;
+use Sulytics\Saml2\Events\SignedOut;
+use Sulytics\Saml2\Models\IdentityProvider;
 use OneLogin\Saml2\Auth as OneLoginAuth;
 use OneLogin\Saml2\Error as OneLoginError;
 
@@ -16,7 +16,7 @@ class Auth
     protected OneLoginAuth $oneLoginAuth;
 
     /**
-     * @var \Freegee\LaravelSaml2\Models\IdentityProvider
+     * @var \Sulytics\Saml2\Models\IdentityProvider
      */
     protected IdentityProvider $identityProvider;
 
@@ -48,7 +48,7 @@ class Auth
     }
 
     /**
-     * @return \Freegee\LaravelSaml2\Models\IdentityProvider
+     * @return \Sulytics\Saml2\Models\IdentityProvider
      */
     public function getIdentityProvider(): IdentityProvider
     {
@@ -56,7 +56,7 @@ class Auth
     }
 
     /**
-     * @param  \Freegee\LaravelSaml2\Models\IdentityProvider  $identityProvider
+     * @param  \Sulytics\Saml2\Models\IdentityProvider  $identityProvider
      * @return Auth
      */
     public function setIdentityProvider(IdentityProvider $identityProvider): Auth

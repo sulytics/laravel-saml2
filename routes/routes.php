@@ -1,6 +1,6 @@
 <?php
 
-use Freegee\LaravelSaml2\Http\Controllers\Saml2Controller;
+use Sulytics\Saml2\Http\Controllers\Saml2Controller;
 use Illuminate\Support\Facades\Route;
 
 Route::name('saml.')

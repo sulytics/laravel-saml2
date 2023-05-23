@@ -1,11 +1,11 @@
 <?php
 
-namespace Freegee\LaravelSaml2\Http\Controllers;
+namespace Sulytics\Saml2\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Exception;
-use Freegee\LaravelSaml2\Auth;
-use Freegee\LaravelSaml2\Events\SignedIn;
+use Sulytics\Saml2\Auth;
+use Sulytics\Saml2\Events\SignedIn;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -18,7 +18,7 @@ class Saml2Controller extends Controller
      * Initiate a logout request.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \Freegee\LaravelSaml2\Auth  $auth
+     * @param  \Sulytics\Saml2\Auth  $auth
      *
      * @return void
      *
@@ -37,7 +37,7 @@ class Saml2Controller extends Controller
      * Initiate a login request.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \Freegee\LaravelSaml2\Auth  $auth
+     * @param  \Sulytics\Saml2\Auth  $auth
      *
      * @return void
      *
@@ -53,7 +53,7 @@ class Saml2Controller extends Controller
     /**
      * Render the metadata.
      *
-     * @param  \Freegee\LaravelSaml2\Auth  $auth
+     * @param  \Sulytics\Saml2\Auth  $auth
      *
      * @return \Illuminate\Http\Response
      *
@@ -70,7 +70,7 @@ class Saml2Controller extends Controller
      *
      * Fires "SignedIn" event if a valid user is found.
      *
-     * @param  \Freegee\LaravelSaml2\Auth  $auth
+     * @param  \Sulytics\Saml2\Auth  $auth
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      *
@@ -113,7 +113,7 @@ class Saml2Controller extends Controller
      *
      * This means the user logged out of the SSO infrastructure, you 'should' log him out locally too.
      *
-     * @param  \Freegee\LaravelSaml2\Auth  $auth
+     * @param  \Sulytics\Saml2\Auth  $auth
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      *

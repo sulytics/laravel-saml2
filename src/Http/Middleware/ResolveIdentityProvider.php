@@ -1,11 +1,11 @@
 <?php
 
-namespace Freegee\LaravelSaml2\Http\Middleware;
+namespace Sulytics\Saml2\Http\Middleware;
 
 use Closure;
-use Freegee\LaravelSaml2\Models\IdentityProvider;
-use Freegee\LaravelSaml2\OneLoginBuilder;
-use Freegee\LaravelSaml2\Repositories\IdentityProviderRepository;
+use Sulytics\Saml2\Models\IdentityProvider;
+use Sulytics\Saml2\OneLoginBuilder;
+use Sulytics\Saml2\Repositories\IdentityProviderRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -14,18 +14,18 @@ class ResolveIdentityProvider
 {
 
     /**
-     * @var \Freegee\LaravelSaml2\Repositories\IdentityProviderRepository
+     * @var \Sulytics\Saml2\Repositories\IdentityProviderRepository
      */
     protected IdentityProviderRepository $identityProviderRepository;
 
     /**
-     * @var \Freegee\LaravelSaml2\OneLoginBuilder
+     * @var \Sulytics\Saml2\OneLoginBuilder
      */
     protected OneLoginBuilder $oneLoginBuilder;
 
     /**
-     * @param  \Freegee\LaravelSaml2\Repositories\IdentityProviderRepository  $identityProviderRepository
-     * @param  \Freegee\LaravelSaml2\OneLoginBuilder  $oneLoginBuilder
+     * @param  \Sulytics\Saml2\Repositories\IdentityProviderRepository  $identityProviderRepository
+     * @param  \Sulytics\Saml2\OneLoginBuilder  $oneLoginBuilder
      */
     public function __construct(IdentityProviderRepository $identityProviderRepository, OneLoginBuilder $oneLoginBuilder)
     {
@@ -72,7 +72,7 @@ class ResolveIdentityProvider
      *
      * @param  \Illuminate\Http\Request  $request
      *
-     * @return \Freegee\LaravelSaml2\Models\IdentityProvider|null
+     * @return \Sulytics\Saml2\Models\IdentityProvider|null
      */
     protected function resolveIdentityProvider(Request $request): ?IdentityProvider
     {

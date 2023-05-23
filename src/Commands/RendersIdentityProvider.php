@@ -1,6 +1,6 @@
 <?php
 
-namespace Freegee\LaravelSaml2\Commands;
+namespace Sulytics\Saml2\Commands;
 
 use FreeGee\LaravelSaml2\Models\IdentityProvider;
 use Illuminate\Support\Str;

@@ -1,8 +1,8 @@
 <?php
 
-namespace Freegee\LaravelSaml2\Repositories;
+namespace Sulytics\Saml2\Repositories;
 
-use Freegee\LaravelSaml2\Models\IdentityProvider;
+use Sulytics\Saml2\Models\IdentityProvider;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;

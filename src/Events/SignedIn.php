@@ -1,9 +1,9 @@
 <?php
 
-namespace Freegee\LaravelSaml2\Events;
+namespace Sulytics\Saml2\Events;
 
-use Freegee\LaravelSaml2\Auth;
-use Freegee\LaravelSaml2\Saml2User;
+use Sulytics\Saml2\Auth;
+use Sulytics\Saml2\Saml2User;
 
 class SignedIn
 {

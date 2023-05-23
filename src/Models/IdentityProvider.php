@@ -1,6 +1,6 @@
 <?php
 
-namespace Freegee\LaravelSaml2\Models;
+namespace Sulytics\Saml2\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -23,7 +23,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  * @property \Carbon\Carbon $deleted_at
- * @@property-read \Freegee\LaravelSaml2\Models\ServiceProvider $serviceProvider
+ * @@property-read \Sulytics\Saml2\Models\ServiceProvider $serviceProvider
  */
 class IdentityProvider extends Model
 {

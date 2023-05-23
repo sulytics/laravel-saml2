@@ -1,8 +1,8 @@
 <?php
 
-namespace Freegee\LaravelSaml2;
+namespace Sulytics\Saml2;
 
-use Freegee\LaravelSaml2\Models\IdentityProvider;
+use Sulytics\Saml2\Models\IdentityProvider;
 use OneLogin\Saml2\Auth as OneLoginAuth;
 
 class Saml2User
@@ -13,7 +13,7 @@ class Saml2User
     protected OneLoginAuth $oneLoginAuth;
 
     /**
-     * @var \Freegee\LaravelSaml2\Models\IdentityProvider
+     * @var \Sulytics\Saml2\Models\IdentityProvider
      */
     protected IdentityProvider $identityProvider;
 
@@ -44,7 +44,7 @@ class Saml2User
     }
 
     /**
-     * @return \Freegee\LaravelSaml2\Models\IdentityProvider
+     * @return \Sulytics\Saml2\Models\IdentityProvider
      */
     public function getIdentityProvider(): IdentityProvider
     {
@@ -52,7 +52,7 @@ class Saml2User
     }
 
     /**
-     * @param  \Freegee\LaravelSaml2\Models\IdentityProvider  $identityProvider
+     * @param  \Sulytics\Saml2\Models\IdentityProvider  $identityProvider
      * @return Saml2User
      */
     public function setIdentityProvider(IdentityProvider $identityProvider): Saml2User

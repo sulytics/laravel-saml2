@@ -1,9 +1,9 @@
 {
-    "name": "freegee/laravel-saml2",
-    "description": "SAML2 Provider for Laravel based oneLogin.",
+    "name": "sulytics/laravel-saml2",
+    "description": "SAML2 Provider for Laravel based on OneLogin.",
     "type": "library",
     "license": "MIT",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "authors": [
         {
             "name": "Maja Fritschi",
@@ -21,13 +21,13 @@
     "require-dev": {},
     "autoload": {
         "psr-4": {
-            "Freegee\\LaravelSaml2\\": "src/"
+            "Sulytics\\Saml2\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Freegee\\LaravelSaml2\\Saml2ServiceProvider"
+                "Sulytics\\Saml2\\Saml2ServiceProvider"
             ]
         }
     },

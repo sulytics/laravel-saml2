@@ -10,7 +10,7 @@ class CreateSaml2IdentityProvidersTable extends Migration
     {
         Schema::create('saml2_identity_providers', function (Blueprint $table) {
             $table->id('id');
-            $table->foreignIdFor(\Freegee\LaravelSaml2\Models\ServiceProvider::class);
+            $table->foreignIdFor(\Sulytics\Saml2\Models\ServiceProvider::class);
             $table->string('idp_key')->unique();
             $table->string('idp_entity_id');
             $table->string('idp_login_url');

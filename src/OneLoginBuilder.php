@@ -1,9 +1,9 @@
 <?php
 
-namespace Freegee\LaravelSaml2;
+namespace Sulytics\Saml2;
 
-use Freegee\LaravelSaml2\Models\IdentityProvider;
-use Freegee\LaravelSaml2\Models\ServiceProvider;
+use Sulytics\Saml2\Models\IdentityProvider;
+use Sulytics\Saml2\Models\ServiceProvider;
 use Illuminate\Container\Container;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\URL;
@@ -24,14 +24,14 @@ class OneLoginBuilder
     /**
      * The resolved identity provider
      *
-     * @var \Freegee\LaravelSaml2\Models\IdentityProvider
+     * @var \Sulytics\Saml2\Models\IdentityProvider
      */
     protected IdentityProvider $identityProvider;
 
     /**
      * The service Provider of the resolved identity provider
      *
-     * @var \Freegee\LaravelSaml2\Models\ServiceProvider
+     * @var \Sulytics\Saml2\Models\ServiceProvider
      */
     protected ServiceProvider $serviceProvider;
 

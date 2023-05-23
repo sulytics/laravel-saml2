@@ -1,8 +1,8 @@
 <?php
 
-namespace Freegee\LaravelSaml2\Commands;
+namespace Sulytics\Saml2\Commands;
 
-use Freegee\LaravelSaml2\Models\ServiceProvider;
+use Sulytics\Saml2\Models\ServiceProvider;
 use Illuminate\Console\Command;
 
 class CreateServiceProvider extends Command

@@ -1,9 +1,9 @@
 <?php
 
-namespace Freegee\LaravelSaml2;
+namespace Sulytics\Saml2;
 
-use Freegee\LaravelSaml2\Commands\CreateIdentityProvider;
-use Freegee\LaravelSaml2\Commands\CreateServiceProvider;
+use Sulytics\Saml2\Commands\CreateIdentityProvider;
+use Sulytics\Saml2\Commands\CreateServiceProvider;
 use Illuminate\Support\Facades\Log;
 
 class Saml2ServiceProvider extends \Illuminate\Support\ServiceProvider

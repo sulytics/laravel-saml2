@@ -1,6 +1,6 @@
 <?php
 
-namespace Freegee\LaravelSaml2\Helpers;
+namespace Sulytics\Saml2\Helpers;
 
 
 use Illuminate\Support\Arr;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Freegee\LaravelSaml2\Models;
+namespace Sulytics\Saml2\Models;
 
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
